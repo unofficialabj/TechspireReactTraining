@@ -3,41 +3,42 @@ import ProfileCard from "../components/ProfileCard";
 const Home = () => {
   const detail = [
     {
-      name: "Anish  Bhakta joshi",
+      name: "John Doe",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Ipsum has been the industrys standard dummy text eversince the 1500s, when",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     },
     {
-      name: "Test Test",
+      name: "Jane Smith",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Ipsum has been the industrys standard dummy text eversince the 1500s, when",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     },
     {
-      name: "Ram Shyam",
+      name: "Alice Johnson",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Ipsum has been the industrys standard dummy text eversince the 1500s, when",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     },
     {
-      name: "Ashok Budha",
+      name: "Bob Brown",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Ipsum has been the industrys standard dummy text eversince the 1500s, when",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     },
     {
-      name: "Anish  Bhakta joshi",
+      name: "Charlie Davis",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Ipsum has been the industrys standard dummy text eversince the 1500s, when",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     },
     {
-      name: "Anish  Bhakta joshi",
+      name: "Eve White",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Ipsum has been the industrys standard dummy text eversince the 1500s, when",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     },
     {
-      name: "Anish  Bhakta joshi",
+      name: "Frank Black",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Ipsum has been the industrys standard dummy text eversince the 1500s, when",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     },
   ];
+
   return (
     <div style={{ display: "flex ", gap: "10px" }}>
       {detail.map((item, index) => {

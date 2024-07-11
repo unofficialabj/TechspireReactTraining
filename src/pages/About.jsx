@@ -1,52 +1,42 @@
+import { useState } from "react";
+
 const About = () => {
-  const detail = [
-    {
-      name: "John Doe",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    },
-    {
-      name: "Jane Smith",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    },
-    {
-      name: "Alice Johnson",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    },
-    {
-      name: "Bob Brown",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    },
-    {
-      name: "Charlie Davis",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    },
-    {
-      name: "Eve White",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    },
-    {
-      name: "Jane Smith",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    },
-  ];
+  const [inputValue, setInputValue] = useState("");
+  const [task, setTask] = useState([]);
 
-  const mapResult = detail.map((item) => item);
+  const inputHandler = (e) => {
+    setInputValue(e.target.value);
+  };
 
-  console.log(mapResult)
+  const buttonHandler = () => {
+    setTask([...task, inputValue]);
+    setInputValue("");
+  };
 
-  const findResult = detail.find((item) => item.name === "Jane Smith");
-  const filterResult = detail.filter((item) => item.name === "Jane Smith");
-  console.log(findResult, "find");
-  console.log(filterResult, "filter");
+  return (
+    <>
+      <h1>To do list</h1>
+      <input
+        placeholder="Enter your task here"
+        // value={inputValue}
+        onChange={inputHandler}
+      />
+      <button onClick={buttonHandler}>Add Task</button>
+      <br />
+      <br />
+      <h4 style={{ color: "red" }}>Here is the list of your task:</h4>
 
-  return <div></div>;
+      {task.length == 0 ? (
+        <h4>No task in the list</h4>
+      ) : (
+        task.map((item, index) => (
+          <h5 key={index}>
+            {index + 1}. {item}
+          </h5>
+        ))
+      )}
+    </>
+  );
 };
 
 export default About;

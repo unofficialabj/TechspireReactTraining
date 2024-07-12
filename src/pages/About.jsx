@@ -1,40 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const About = () => {
-  const [inputValue, setInputValue] = useState("");
-  const [task, setTask] = useState([]);
+  const [trigger, setTrigger] = useState(true);
 
-  const inputHandler = (e) => {
-    setInputValue(e.target.value);
+  console.log(trigger);
+
+  const handleTrigger = () => {
+    setTrigger(!trigger);
   };
 
-  const buttonHandler = () => {
-    setTask([...task, inputValue]);
-    setInputValue("");
-  };
+  useEffect(() => {
+    console.log("useEffect is triggered.");
+  }, [trigger]);
 
   return (
     <>
-      <h1>To do list</h1>
-      <input
-        placeholder="Enter your task here"
-        // value={inputValue}
-        onChange={inputHandler}
-      />
-      <button onClick={buttonHandler}>Add Task</button>
-      <br />
-      <br />
-      <h4 style={{ color: "red" }}>Here is the list of your task:</h4>
-
-      {task.length == 0 ? (
-        <h4>No task in the list</h4>
-      ) : (
-        task.map((item, index) => (
-          <h5 key={index}>
-            {index + 1}. {item}
-          </h5>
-        ))
-      )}
+      <h2>Here is the button</h2>
+      <button onClick={handleTrigger}>Trigger Button</button>
     </>
   );
 };
